@@ -1,19 +1,48 @@
 .button-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 10vw;
-    height: 10vh;
-    margin-left: 40%;
-    margin-top: 15%;
+    align-items: center;
+    
+    width: 50vw;
+    min-height: 50vh;
+    
 
 }
 
 .button-container button{
-    height: 100%;
-    width: 100%;
+    height: 300%;
+    width: 50%;
     margin-bottom: 10%;
     
 
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.outcome-section{
+    min-height: 100%;
+    min-width: 100%;
+    margin-top: 10%;
+    display: flex;
+}
+
+.outcome{
+    border-color: magenta;
+    min-width: 40%;
+    min-height: 40%;
+    background-color: skyblue;
+   
+}
+.score{
+    background-color: skyblue;
+    border-color: magenta;
+    min-width: 40%;
+    min-height: 40%;
+    
+    
 }
