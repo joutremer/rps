@@ -7,7 +7,7 @@ let roundNumber;
 let draw = 0;
 let humanSelection;
 let computerSelection;
-let keepPlaying = true;
+//let keepPlaying = true;
 
 function startGame(){
     console.log("Welcome to Rock, Paper, Scissors!  Let's Play!");
@@ -24,9 +24,9 @@ function validateUserInput(number){
     }
 }
 
-function promptUser(){
-     userChoice = prompt("Rock(0), Paper(1), or Scissors(2) ????");
-     validateUserInput(userChoice);
+//function promptUser(){
+  //   userChoice = prompt("Rock(0), Paper(1), or Scissors(2) ????");
+    // validateUserInput(userChoice);
 
     
 }
@@ -39,11 +39,13 @@ function getRandomInt(max) {
 
 function computerPrompt(){
     computerSelection = getRandomInt(3);
+    return computerSelection;
 }
 
 //evalaute winner, print output, and current score
 
-function determineWinner(user, computer){
+function determineWinner(user){
+    let computer = computerPrompt();
     if (user == 0 && computer == 2 || user == 1 && computer == 0 || user == 2 && computer == 1){
         userScore += 1;
         console.log("You win!");
@@ -74,11 +76,24 @@ function keepPlay(){
     }
 }
 
-startGame();
 
-while (keepPlaying == true){
-    promptUser();
-    computerPrompt();
-    determineWinner(userChoice, computerSelection);
-    keepPlay();
-}
+
+//while (keepPlaying == true){
+  //  promptUser();
+    //computerPrompt();
+    //determineWinner(userChoice, computerSelection);
+//    keepPlay();
+//}
+
+const rockButton = document.querySelector(".rock");
+rockButton.addEventListener("click", determineWinner(0));
+
+const paperButton = document.querySelector(".paper");
+paperButton.addEventListener("click", determineWinner(1));
+
+const scissorsButton = document.querySelector(".scissors");
+scissorsButton.addEventListener("click", determineWinner(2));
+
+///promptUser can be removed and replaced with event listner on each button which which then call computerPrompt
+//After it calls computerPrompt then it posts the answer to a box does determineWinner
+//Keep play should instead be a form submission that resets the screen
